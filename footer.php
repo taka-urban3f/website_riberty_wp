@@ -1,8 +1,8 @@
 <footer class="l-footer">
             <ul class="l-footer__snsBox">
-                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="img/sns_facebook.svg" alt="フェイスブック" class="l-footer__snsBox__img"></a></li>
-                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="img/sns_insta.svg" alt="インスタグラム" class="l-footer__snsBox__img"></a></li>
-                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="img/sns_x.svg" alt="エックス（旧ツイッター）" class="l-footer__snsBox__img"></a></li>
+                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sns_facebook.svg" alt="フェイスブック" class="l-footer__snsBox__img"></a></li>
+                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sns_insta.svg" alt="インスタグラム" class="l-footer__snsBox__img"></a></li>
+                <li class="l-footer__li"><a href="#" class="l-footer__snsBox__a"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sns_x.svg" alt="エックス（旧ツイッター）" class="l-footer__snsBox__img"></a></li>
             </ul>
 
             <ul class="l-footer__ul">
@@ -16,7 +16,7 @@
         </footer>
     </main>
 
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 
     <?php wp_footer(); ?>
 </body>

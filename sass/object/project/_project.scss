@@ -1,0 +1,666 @@
+//////////////////////////////////////////////////////////////
+/// _project.scss
+//////////////////////////////////////////////////////////////
+
+@use "../../foundation/base";
+
+@mixin catch_ctn_setting {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4.2vw;
+    color: base.$darkBlue;
+    text-align: center;
+
+    @include base.mq(tab) {
+        font-size: base.px_to_rem(23);
+    }
+
+    @include base.mq(pc) {
+        font-size: base.px_to_rem(28.8);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 4vw;
+        height: 4.5vw;
+        left: -6vw;
+        bottom: 1.3vw;
+        background-image: url(../img/line_left.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include base.mq(tab) {
+            width: 23px;
+            height: 28px;
+            left: -37px;
+            bottom: 2px;
+        }
+
+        @include base.mq(pc) {
+            width: 29px;
+            height: 33px;
+            left: -45px;
+            bottom: 2px;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4vw;
+        height: 4.5vw;
+        right: -6vw;
+        bottom: 1.3vw;
+        background-image: url(../img/line_right.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include base.mq(tab) {
+            width: 23px;
+            height: 28px;
+            right: -37px;
+            bottom: 2px;
+        }
+
+        @include base.mq(pc) {
+            width: 29px;
+            height: 33px;
+            right: -45px;
+            bottom: 2px;
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-promptScroll
+.p-promptScroll {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    left: 50%;
+    background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101"><path stroke="%23ffffff" fill-opacity="0" d="m.66,17.74h0c5.71,29.69,21.25,56.6,44.11,76.4h0c3.25,2.82,8.08,2.82,11.33,0h0c22.86-19.8,38.39-46.7,44.11-76.4h0c.81-4.22-1.6-8.4-5.67-9.81h0c-28.57-9.9-59.64-9.9-88.22,0h0C2.26,9.33-.16,13.51.66,17.74Z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 5px;
+    text-align: center;
+    transform: translateX(-50%);
+    animation: sway1 1.3s ease-in-out infinite;
+    filter: drop-shadow(2px 2px 3px black);
+
+    @include base.mq(tab) {
+        width: 80px;
+        height: 80px;
+        bottom: 40px;
+        padding-top: 10px;
+    }
+
+    @include base.mq(pc) {
+        filter: drop-shadow(2px 2px 3px white);
+    }
+
+    &__text {
+        font-size: 10px;
+        color: white;
+
+        @include base.mq(tab) {
+            font-size: 13px;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        animation: sway2 1.3s ease-in-out infinite;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 40px;
+            background-color: white;
+            top: 0;
+            left: 0;
+
+            @include base.mq(tab) {
+                height: 50px;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 10px;
+            background-color: white;
+            top: 30px;
+            left: 0;
+            transform-origin: bottom;
+            transform: skewX(-30deg);
+
+            @include base.mq(tab) {
+                height: 15px;
+                top: 35px;
+            }
+        }
+    }
+
+    @keyframes sway1 {
+        50% {
+            transform: translateX(-50%) translateY(3px);
+        }
+
+        100% {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+    @keyframes sway2 {
+        50% {
+            transform: translateX(-50%) translateY(7px);
+        }
+
+        100% {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-topBtn
+.p-topBtn {
+    position: fixed;
+    visibility: hidden;
+    display: block;
+    width: 130px;
+    height: 78px;
+    bottom: 3%;
+    right: 3%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    border: 3px solid base.$yellow;
+    box-shadow: 4px 4px 3px 0 rgba(base.$darkBlue, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    @include base.mq(tab) {
+        width: 150px;
+        height: 90px;
+    }
+
+    &--show {
+        visibility: visible;
+    }
+
+    &__text {
+        font-size: base.px_to_rem(18);
+        color: base.$darkBlue;
+
+        @include base.mq(tab) {
+            font-size: base.px_to_rem(20);
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secFeature
+.p-secFeature {
+    padding-bottom: 13vw;
+
+    @include base.mq(tab) {
+        padding-bottom: 50px;
+    }
+
+    &__h2 {
+        position: relative;
+        height: 51vw;
+        background-image: url(../img/sp/fukidashi1_sp.svg), linear-gradient(base.$mainBlue 0%, base.$mainBlue 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 87%, cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include base.mq(tab) {
+            background-image: url(../img/fukidashi1.svg), linear-gradient(base.$mainBlue 0%, base.$mainBlue 100%);
+            background-size: 64%, cover;
+        }
+
+        @include base.mq(pc) {
+            background-image: url(../img/fukidashi1.svg), linear-gradient(base.$mainBlue 0%, base.$mainBlue 100%);
+            background-size: 63.8%, cover;
+        }
+
+        &__img1 {
+            width: 81.8vw;
+            margin-left: 10.1vw;
+
+            @include base.mq(tab) {
+                width: 74vw;
+                margin-left: 17.5vw;
+            }
+
+            @include base.mq(pc) {
+                width: 61vw;
+                margin-left: 20.5vw;
+            }
+        }
+
+        &__img2 {
+            position: absolute;
+            width: 23vw;
+            top: 84%;
+            left: -3%;
+            transform: rotate(13.46deg);
+
+            @include base.mq(tab) {
+                width: 26vw;
+                top: 52%;
+            }
+
+            @include base.mq(pc) {
+                width: 24.3vw;
+                top: 50%;
+            }
+        }
+    }
+
+    &__boxCatch {
+        padding: 27vw 0 11vw;
+        background-image: url(../img/star1.svg), url(../img/star3.svg);
+        background-repeat: no-repeat;
+        background-size: 18vw 18vw, 43vw 43vw;
+        background-position: 109% 51%, 87% -69%;
+
+        @include base.mq(tab) {
+            padding: 170px 0 48px;
+            background-size: 105px 105px, 264px 264px;
+            background-position: top 175px right -37px, right 60px top -124px;
+        }
+
+        @include base.mq(pc) {
+            max-width: base.$maxWidth;
+            margin: 0 auto;
+            padding: 167px 0 70px;
+            background-size: 105px 105px, 324px 324px;
+            background-position: top 267px right 30px, right 50px top -175px;
+        }
+    }
+
+    &__catch1 {
+        @include catch_ctn_setting;
+    }
+
+    &__catch2 {
+        margin-top: 5.6vw;
+        @include catch_ctn_setting;
+
+        @include base.mq(tab) {
+            margin-top: 40px;
+        }
+
+        @include base.mq(pc) {
+            margin-top: 50px;
+        }
+    }
+
+    &__br {
+        @include base.mq(tab) {
+            display: none;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        max-width: base.$maxWidth;
+        margin: 0 auto;
+        @include base.common_padding;
+
+        @include base.mq(tab) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 41vw;
+            height: 41vw;
+            top: -11vw;
+            left: -7.2vw;
+            background-image: url(../img/star2.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: -1;
+
+            @include base.mq(tab) {
+                width: 176px;
+                height: 176px;
+                top: -32px;
+                left: 78px;
+            }
+
+            @include base.mq(pc) {
+                width: 222px;
+                height: 222px;
+                top: -50px;
+                left: 205px;
+            }
+        }
+    }
+
+    &__ctn1 {
+        @include base.mq(tab) {
+            margin-top: 5.5%;
+            width: 42%;
+        }
+    }
+
+    &__ctn2 {
+        margin-top: 7vw;
+
+        @include base.mq(tab) {
+            margin-top: 0;
+            width: 53%;
+        }
+
+        &__img {
+            width: 90%;
+
+            @include base.mq(tab) {
+                width: 85%;
+            }
+        }
+
+        &__p {
+            width: 95%;
+            margin-right: 0;
+            margin-left: auto;
+            margin-top: -38%;
+            padding: calc(38% + 8px) 17px 56px;
+            color: base.$darkBlue;
+            border: 1px solid base.$yellow;
+            border-radius: 55px;
+
+            @include base.mq(tab) {
+                margin-top: -35%;
+                padding: calc(38% + 12px) 17px 56px;
+            }
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secLineup
+.p-secLineup {
+    border-top: 17px solid base.$mainBlue;
+    @include base.common_padding;
+    padding-top: 70px;
+
+    &__grid {
+        margin-top: 56px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 245px);
+        justify-content: center;
+        gap: 39px;
+
+        &__box {
+            border: 1px solid base.$gray;
+            border-radius: 27px;
+            overflow: hidden;
+            font-size: base.px_to_rem(17);
+            color: base.$darkGray;
+        }
+
+        &__img {
+            display: block;
+            width: 39%;
+            margin: 31px auto 22px;
+        }
+
+        &__name {
+            margin: 0px 16px 9px;
+        }
+
+        &__price {
+            margin: 0px 16px 31px;
+        }
+    }
+
+    &__btn {
+        margin: 84px auto 0;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secBlog
+.p-secBlog {
+    margin-top: 235px;
+    @include base.common_padding;
+
+    &__box {
+        max-width: base.$maxWidth;
+        margin: 0 auto;
+        padding: 14px 11px 14px;
+        background-color: base.$mainBlue;
+        border-radius: 27px;
+
+        @include base.mq(tab) {
+            padding: 14px 20px 49px;
+        }
+
+        @include base.mq(pc) {
+            padding: 14px 67px 49px 20px;
+        }
+    }
+
+    &__h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 42px;
+
+        @include base.mq(tab) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 26px;
+        }
+
+        &__imgFace {
+            width: 130px;
+        }
+
+        &__imgText {
+            margin-top: -47px;
+            width: 315px;
+
+            @include base.mq(tab) {
+                margin-top: 4px;
+                margin-left: -17px;
+            }
+        }
+    }
+
+    &__fukidashi {
+        position: relative;
+        padding: 18px 27px;
+        margin-right: 0;
+        margin-left: 35px;
+        background-color: white;
+        border-radius: 27px;
+        font-size: base.px_to_rem(18);
+        color: base.$darkBlue;
+
+        &+& {
+            margin-top: 20px;
+        }
+
+        @include base.mq(pc) {
+            display: flex;
+            padding: 44px 57px;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 35px;
+            height: 43px;
+            top: 20px;
+            left: -33px;
+            background-image: url(../img/part_fukidashi.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+        }
+
+        &__dt {
+            margin-bottom: 13px;
+
+            @include base.mq(pc) {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__dd {
+            @include base.mq(tab) {
+                margin-left: 47px;
+            }
+
+            @include base.mq(pc) {
+                margin-left: 56px;
+            }
+        }
+    }
+
+    &__btn {
+        margin: 42px auto 0;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secNews
+.p-secNews {
+    margin-top: 184px;
+    @include base.common_padding;
+
+    &__h2 {
+        margin-bottom: 56px;
+    }
+
+    &__dl {
+        max-width: base.$maxWidth;
+        margin: 0 auto;
+        padding: 15px 28px;
+        font-size: base.px_to_rem(18);
+        color: base.$darkBlue;
+        border-top: 1px solid base.$mainBlue;
+
+        &:last-of-type {
+            border-bottom: 1px solid base.$mainBlue;
+        }
+
+        @include base.mq(tab) {
+            display: flex;
+            padding: 35px 28px;
+        }
+
+        @include base.mq(pc) {
+            padding: 35px 28px 35px 77px;
+        }
+    }
+
+    &__dt {
+        margin-bottom: 9px;
+
+        @include base.mq(tab) {
+            margin-bottom: 0;
+            margin-right: 87px;
+        }
+    }
+
+    &__btn {
+        margin: 84px auto 0;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secBanne
+.p-secBanner {
+    max-width: base.$maxWidth;
+    margin: 152px auto 0;
+}
+
+//////////////////////////////////////////////////////////////
+/// .p-secInformation
+.p-secInformation {
+    max-width: base.$maxWidth;
+    margin: 184px auto 0;
+    @include base.common_padding;
+    color: base.$darkBlue;
+
+    &__p1 {
+        margin-top: 56px;
+        margin-bottom: 36px;
+        font-size: base.px_to_rem(24);
+    }
+
+    &__flex {
+        @include base.mq(tab) {
+            margin-bottom: 55px;
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    &__ctn {
+        display: flex;
+
+        &:not(:last-of-type) {
+            margin-bottom: 23px;
+        }
+    }
+
+    &__imgLogo {
+        display: block;
+        width: 81vw;
+        margin: 36px auto;
+
+        @include base.mq(tab) {
+            width: 303px;
+            margin: 0;
+            margin-left: 67px;
+        }
+    }
+
+    &__map {
+        iframe {
+            width: 100%;
+            height: 75vw;
+
+            @include base.mq(tab) {
+                height: 53vw;
+            }
+
+            @include base.mq(tab) {
+                height: 33vw;
+            }
+        }
+    }
+}

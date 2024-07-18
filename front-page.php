@@ -6,29 +6,27 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="架空サイト「 Guitar Shop Riberty 」">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
 
-    <title>架空サイト「 Guitar Shop Riberty 」 - トップページ - </title>
+    <title><?php bloginfo('name'); ?> - トップページ - </title>
 
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/favicon.ico">
 
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div class="l-loading">
-        <img src="img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
+    <div class="l-loading l-loading--nojs">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
         <p class="l-loading__p">読み込み中・・・</p>
     </div>
 
     <header class="l-header">
         <div class="l-header__bar">
-            <h1 class="l-header__h1"><a href="index.html"><img src="img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
+            <h1 class="l-header__h1"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
             <div class="l-header__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
@@ -75,12 +73,12 @@
         <section class="p-secFeature">
             <h2 class="p-secFeature__h2">
                 <picture>
-                    <source media="(min-width: 768px)" srcset="img/text_feature.png">
-                    <img src="img/sp/text_feature_sp.png" alt="今とくに欲しいギターがないって！？でも気になるギターはあるんでしょ？" class="p-secFeature__h2__img1">
+                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_feature.png">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/text_feature_sp.png" alt="今とくに欲しいギターがないって！？でも気になるギターはあるんでしょ？" class="p-secFeature__h2__img1">
                 </picture>
                 <picture>
-                    <source media="(min-width: 768px)" srcset="img/playing_man.png">
-                    <img src="img/sp/playing_man_sp.png" alt="" class="p-secFeature__h2__img2">
+                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/playing_man.png">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/playing_man_sp.png" alt="" class="p-secFeature__h2__img2">
                 </picture>
             </h2>
 
@@ -98,14 +96,14 @@
             <div class="p-secFeature__wrapper">
                 <div class="p-secFeature__ctn1">
                     <picture>
-                        <source media="(min-width: 768px)" srcset="img/pic1.png">
-                        <img src="img/sp/pic1_sp.png" alt="" class="p-secFeature__img">
+                        <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/pic1.png">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/pic1_sp.png" alt="" class="p-secFeature__img">
                     </picture>
                 </div>
                 <div class="p-secFeature__ctn2">
                     <picture>
-                        <source media="(min-width: 768px)" srcset="img/pic2.png">
-                        <img src="img/sp/pic2_sp.png" alt="" class="p-secFeature__ctn2__img">
+                        <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/pic2.png">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/pic2_sp.png" alt="" class="p-secFeature__ctn2__img">
                     </picture>
                     <p class="p-secFeature__ctn2__p">店長の成田です。ギターについて何でもご相談ください！リペアーやメンテナンスについてもご対応いたします！</p>
                 </div>
@@ -114,34 +112,34 @@
 
         <section class="p-secLineup" id="secLineup">
             <div class="p-secLineup__h2 c-hDeco">
-                <div class="c-hDeco__ctn"><div class="u-skewAnime"><img src="img/text_lineup.svg" alt="ラインナップ" class="c-hDeco__imgText u-skewAnime__target"></div></div>
+                <div class="c-hDeco__ctn"><div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_lineup.svg" alt="ラインナップ" class="c-hDeco__imgText u-skewAnime__target"></div></div>
                 <h2 class="c-hDeco__p">ラインナップ</h2>
             </div>
             <div class="p-secLineup__grid">
                 <a href="#">
                     <div class="p-secLineup__grid__box">
-                        <img src="img/guitar1.jpg " alt="レスポールタイプ" class="p-secLineup__grid__img">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar1.jpg " alt="レスポールタイプ" class="p-secLineup__grid__img">
                         <p class="p-secLineup__grid__name">Les Paul Type</p>
                         <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
                     </div>
                 </a>
                 <a href="#">
                     <div class="p-secLineup__grid__box">
-                        <img src="img/guitar2.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar2.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
                         <p class="p-secLineup__grid__name">TelecasterType</p>
                         <p class="p-secLineup__grid__price">￥１００、０００（税込）</p>
                     </div>
                 </a>
                 <a href="#">
                     <div class="p-secLineup__grid__box">
-                        <img src="img/guitar3.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar3.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
                         <p class="p-secLineup__grid__name">Telecaster Type</p>
                         <p class="p-secLineup__grid__price">￥１１０、０００（税込）</p>
                     </div>
                 </a>
                 <a href="#">
                     <div class="p-secLineup__grid__box">
-                        <img src="img/guitar4.jpg " alt="ストラトキャスタータイプ" class="p-secLineup__grid__img">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar4.jpg " alt="ストラトキャスタータイプ" class="p-secLineup__grid__img">
                         <p class="p-secLineup__grid__name">StratocasterType</p>
                         <p class="p-secLineup__grid__price">￥１００、０００（税込）</p>
                     </div>
@@ -154,8 +152,8 @@
         <section class="p-secBlog" id="secBlog">
             <div class="p-secBlog__box">
                 <h2 class="p-secBlog__h2">
-                    <img src="img/face.png" alt="" class="p-secBlog__h2__imgFace">
-                    <img src="img/text_tubuyaki.png" alt="店長のつぶやきブログ" class="p-secBlog__h2__imgText">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/face.png" alt="" class="p-secBlog__h2__imgFace">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_tubuyaki.png" alt="店長のつぶやきブログ" class="p-secBlog__h2__imgText">
                 </h2>
                 <dl class="p-secBlog__fukidashi">
                     <dt class="p-secBlog__fukidashi__dt">2024.6.14</dt>
@@ -173,7 +171,7 @@
 
         <section class="p-secNews" id="secNews">
             <div class="p-secNews__h2 c-hDeco">
-                <div class="c-hDeco__ctn"><div class="u-skewAnime"><img src="img/text_news.svg" alt="ニュース" class="c-hDeco__imgText u-skewAnime__target"></div></div>
+                <div class="c-hDeco__ctn"><div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_news.svg" alt="ニュース" class="c-hDeco__imgText u-skewAnime__target"></div></div>
                 <h2 class="c-hDeco__p">ニュース</h2>
             </div>
 
@@ -199,14 +197,14 @@
 
         <div class="p-secBanner">
             <picture>
-                <source media="(min-width: 768px)" srcset="img/banner.png">
-                <img src="img/sp/banner_sp.png" alt="弦やメンテナンス品などの消耗品もリバティーへゴー" class="p-secBanner__img">
+                <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/banner.png">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/banner_sp.png" alt="弦やメンテナンス品などの消耗品もリバティーへゴー" class="p-secBanner__img">
             </picture>
         </div>
 
         <section class="p-secInformation" id="secInformation">
             <div class="p-secInformation__h2 c-hDeco c-hDeco--mini">
-                <div class="c-hDeco__ctn"><div class="u-skewAnime"><img src="img/text_information.svg" alt="インフォメーション" class="c-hDeco__imgText u-skewAnime__target"></div></div>
+                <div class="c-hDeco__ctn"><div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_information.svg" alt="インフォメーション" class="c-hDeco__imgText u-skewAnime__target"></div></div>
                 <h2 class="c-hDeco__p">インフォメーション</h2>
             </div>
 
@@ -231,7 +229,7 @@
                         <dd class="p-secInformation__ctn__dd">毎週月曜日</dd>
                     </div>
                 </dl>
-                <img src="img/logo.png" alt="ギターショップ リバティー" class="p-secInformation__imgLogo">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="p-secInformation__imgLogo">
             </div>
 
             <div class="p-secInformation__map">
