@@ -70,7 +70,7 @@ document.querySelector('.c-humBtn').addEventListener('click', function () {
 });
 
 const elems_menu_item = document.querySelectorAll('.l-menu__a');
-if (elems_menu_item != null && elems_menu_item.length >= 1) {
+if (elems_menu_item) {
     for (const elem of elems_menu_item) {
         elem.addEventListener('click', function () {
             close_menu();
@@ -102,7 +102,7 @@ const io_h = new IntersectionObserver(WhenIntersect_header, {
 //.l-headerを監視対象に設定
 let elem_header;
 elem_header = document.querySelector('.l-header');
-if (elem_header != null) {
+if (elem_header) {
     io_h.observe(elem_header);
 }
 
@@ -176,14 +176,14 @@ const io_ta2 = new IntersectionObserver(WhenIntersect_textAnim, {
 function start_observe_ta() {
     let elems_ta;
     elems_ta = document.querySelectorAll('.u-textAnime1');
-    if (elems_ta != null && elems_ta.length >= 1) {
+    if (elems_ta) {
         for (const elem_ta of elems_ta) {
             io_ta1.observe(elem_ta);
         }
     }
 
     elems_ta = document.querySelectorAll('.u-textAnime2');
-    if (elems_ta != null && elems_ta.length >= 1) {
+    if (elems_ta) {
         for (const elem_ta of elems_ta) {
             io_ta2.observe(elem_ta);
         }
@@ -215,14 +215,14 @@ const io_sa = new IntersectionObserver(WhenIntersect_someAnim, {
 function start_observe_sa() {
     let elems_sa;
     elems_sa = document.querySelectorAll('.u-swayAnime');
-    if (elems_sa != null && elems_sa.length >= 1) {
+    if (elems_sa) {
         for (const elem_sa of elems_sa) {
             io_sa.observe(elem_sa);
         }
     }
 
     elems_sa = document.querySelectorAll('.u-skewAnime');
-    if (elems_sa != null && elems_sa.length >= 1) {
+    if (elems_sa) {
         for (const elem_sa of elems_sa) {
             io_sa.observe(elem_sa);
         }
@@ -259,3 +259,17 @@ window.addEventListener('load', function () {
         }, shortageTime);
     }
 });
+
+///////////////////////////////////////////////////////////////////////////////////
+//-----------------商品ページのサムネイルをクリックした時の処理-----------------
+const elem_bigimg = document.querySelector('.p-item__bigImg');
+const elem_items = document.querySelectorAll('.p-item__grid__img');
+if (elem_bigimg && elem_items) {
+    for (const elem of elem_items) {
+        const str_src = elem.getAttribute('src');
+
+        elem.addEventListener('click', function () {
+            elem_bigimg.setAttribute('src', str_src);
+        });
+    }
+}

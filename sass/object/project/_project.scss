@@ -560,10 +560,6 @@
     margin-top: 184px;
     @include base.common_padding;
 
-    &__h2 {
-        margin-bottom: 56px;
-    }
-
     &__dl {
         max-width: base.$maxWidth;
         margin: 0 auto;
@@ -572,6 +568,10 @@
         color: base.$darkBlue;
         border-top: 1px solid base.$mainBlue;
 
+        &:first-of-type {
+            margin-top: 56px;
+        }
+        
         &:last-of-type {
             border-bottom: 1px solid base.$mainBlue;
         }

@@ -1,0 +1,51 @@
+//////////////////////////////////////////////////////////////
+/// _p_news_list.scss
+//////////////////////////////////////////////////////////////
+
+@use "../../foundation/base";
+
+//////////////////////////////////////////////////////////////
+/// .p-secNewsList
+.p-secNewsList {
+    padding-top: 69px;
+    @include base.common_padding;
+
+    &__h2 {
+        margin-bottom: 56px;
+    }
+
+    &__dl {
+        max-width: base.$maxWidth;
+        margin: 0 auto;
+        padding: 15px 28px;
+        font-size: base.px_to_rem(18);
+        color: base.$darkBlue;
+        border-top: 1px solid base.$mainBlue;
+
+        &:last-of-type {
+            border-bottom: 1px solid base.$mainBlue;
+        }
+
+        @include base.mq(tab) {
+            display: flex;
+            padding: 35px 28px;
+        }
+
+        @include base.mq(pc) {
+            padding: 35px 28px 35px 77px;
+        }
+    }
+
+    &__dt {
+        margin-bottom: 9px;
+
+        @include base.mq(tab) {
+            margin-bottom: 0;
+            margin-right: 87px;
+        }
+    }
+
+    &__btn {
+        margin: 84px auto 0;
+    }
+}
