@@ -128,7 +128,8 @@
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
 
-        <a href="<?php echo esc_url(home_url()); ?>/newslist/" class="p-secNews__btn c-btn">もっと見る</a>
+        <a href="<?php echo esc_url(get_permalink( get_page_by_path( 'newslist' )->ID )); ?>" class="p-secNews__btn c-btn">もっと見る</a>
+
     </section>
 
     <div class="p-secBanner">
