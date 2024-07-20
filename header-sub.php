@@ -22,10 +22,10 @@
         <p class="l-loading__p">読み込み中・・・</p>
     </div>
 
-    <header class="l-listPageHeader">
-        <div class="l-listPageHeader__bar">
-            <h1 class="l-listPageHeader__h1"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-listPageHeader__h1__img"></a></h1>
-            <div class="l-listPageHeader__btn c-humBtn">
+    <header class="l-subPageHeader">
+        <div class="l-subPageHeader__bar">
+            <h1 class="l-subPageHeader__h1"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-subPageHeader__h1__img"></a></h1>
+            <div class="l-subPageHeader__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
                     <span class="c-humBtn__line"></span>
@@ -33,11 +33,11 @@
                 </div>
                 <p class="c-humBtn__text">メニュー</p>
             </div>
-            <ul class="l-listPageHeader__ul">
-                <li class="l-listPageHeader__ul__li"><a href="index.html#secLineup" class="l-listPageHeader__ul__a">ラインナップ</a></li>
-                <li class="l-listPageHeader__ul__li"><a href="index.html#secBlog" class="l-listPageHeader__ul__a">店長のつぶやき</a></li>
-                <li class="l-listPageHeader__ul__li"><a href="index.html#secNews" class="l-listPageHeader__ul__a">ニュース</a></li>
-                <li class="l-listPageHeader__ul__li"><a href="index.html#secInformation" class="l-listPageHeader__ul__a">インフォメーション</a></li>
+            <ul class="l-subPageHeader__ul">
+                <li class="l-subPageHeader__ul__li"><a href="index.html#secLineup" class="l-subPageHeader__ul__a">ラインナップ</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="index.html#secBlog" class="l-subPageHeader__ul__a">店長のつぶやき</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="index.html#secNews" class="l-subPageHeader__ul__a">ニュース</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="index.html#secInformation" class="l-subPageHeader__ul__a">インフォメーション</a></li>
             </ul>
         </div>
 
@@ -54,7 +54,7 @@
 
         <picture>
             <source media="(min-width: 768px)" srcset="<?php echo $img_url ?>">
-            <img src="<?php echo $img_sp_url ?>" alt="" class="l-listPageHeader__heroImg">
+            <img src="<?php echo $img_sp_url ?>" alt="" class="l-subPageHeader__heroImg">
         </picture>
 
     </header>

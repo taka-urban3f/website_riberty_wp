@@ -42,14 +42,14 @@
     </section>
 
     <section class="p-secLineup" id="secLineup">
-        <div class="p-secLineup__h2 c-hDeco">
+        <div class="c-hDeco">
             <div class="c-hDeco__ctn">
                 <div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_lineup.svg" alt="ラインナップ" class="c-hDeco__imgText u-skewAnime__target"></div>
             </div>
             <h2 class="c-hDeco__p">ラインナップ</h2>
         </div>
         <div class="p-secLineup__grid">
-            <a href="#">
+            <!-- <a href="#">
                 <div class="p-secLineup__grid__box">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar1.jpg " alt="レスポールタイプ" class="p-secLineup__grid__img">
                     <p class="p-secLineup__grid__name">Les Paul Type</p>
@@ -75,6 +75,54 @@
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar4.jpg " alt="ストラトキャスタータイプ" class="p-secLineup__grid__img">
                     <p class="p-secLineup__grid__name">StratocasterType</p>
                     <p class="p-secLineup__grid__price">￥１００、０００（税込）</p>
+                </div>
+            </a> -->
+            <a href="#">
+                <div class="p-secLineup__grid__box">
+                    <div class="p-secLineup__grid__ctn">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar1.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
+                        <ul class="p-secLineup__grid__ul">
+                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
+                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
+                        </ul>
+                    </div>
+                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="p-secLineup__grid__box">
+                    <div class="p-secLineup__grid__ctn">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar2.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
+                        <ul class="p-secLineup__grid__ul">
+                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
+                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
+                        </ul>
+                    </div>
+                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="p-secLineup__grid__box">
+                    <div class="p-secLineup__grid__ctn">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar3.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
+                        <ul class="p-secLineup__grid__ul">
+                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
+                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
+                        </ul>
+                    </div>
+                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="p-secLineup__grid__box">
+                    <div class="p-secLineup__grid__ctn">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar4.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
+                        <ul class="p-secLineup__grid__ul">
+                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
+                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
+                        </ul>
+                    </div>
+                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
                 </div>
             </a>
         </div>
@@ -103,7 +151,7 @@
     </section>
 
     <section class="p-secNews" id="secNews">
-        <div class="p-secNews__h2 c-hDeco">
+        <div class="c-hDeco">
             <div class="c-hDeco__ctn">
                 <div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_news.svg" alt="ニュース" class="c-hDeco__imgText u-skewAnime__target"></div>
             </div>
@@ -128,7 +176,7 @@
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
 
-        <a href="<?php echo esc_url(get_permalink( get_page_by_path( 'newslist' )->ID )); ?>" class="p-secNews__btn c-btn">もっと見る</a>
+        <a href="<?php echo esc_url(get_permalink(get_page_by_path('newslist')->ID)); ?>" class="p-secNews__btn c-btn">もっと見る</a>
 
     </section>
 
@@ -140,7 +188,7 @@
     </div>
 
     <section class="p-secInformation" id="secInformation">
-        <div class="p-secInformation__h2 c-hDeco c-hDeco--mini">
+        <div class="c-hDeco c-hDeco--mini">
             <div class="c-hDeco__ctn">
                 <div class="u-skewAnime u-skewAnime--nojs"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_information.svg" alt="インフォメーション" class="c-hDeco__imgText u-skewAnime__target"></div>
             </div>

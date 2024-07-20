@@ -2,6 +2,9 @@
 function riberty_theme_setup()
 {
     // add_theme_support('title-tag');
+
+    add_image_size('item-thumbnail', 396, 396, false);
+    add_image_size('item-image', 285, 285, false);
 }
 add_action('after_setup_theme', 'riberty_theme_setup');
 
