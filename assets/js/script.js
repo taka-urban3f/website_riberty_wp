@@ -1,6 +1,6 @@
 'use strict';
 
-//基本ローディング画面は表示させない設定なので、JSが有効な場合、表示させるようにする
+//基本ローディング画面は表示させない設定で、JSが有効な場合は表示させるようにする
 document.querySelector('.l-loading').classList.remove('l-loading--nojs');
 
 //skewAnimeクラスのアニメーションは隠れっぱなし防止の為、基本、直ちに開始するが、JSが有効な場合は画面内に入るまでアニメーションを保留

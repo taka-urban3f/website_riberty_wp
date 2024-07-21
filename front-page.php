@@ -49,82 +49,35 @@
             <h2 class="c-hDeco__p">ラインナップ</h2>
         </div>
         <div class="p-secLineup__grid">
-            <!-- <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar1.jpg " alt="レスポールタイプ" class="p-secLineup__grid__img">
-                    <p class="p-secLineup__grid__name">Les Paul Type</p>
-                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar2.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
-                    <p class="p-secLineup__grid__name">TelecasterType</p>
-                    <p class="p-secLineup__grid__price">￥１００、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar3.jpg " alt="テレキャスタータイプ" class="p-secLineup__grid__img">
-                    <p class="p-secLineup__grid__name">Telecaster Type</p>
-                    <p class="p-secLineup__grid__price">￥１１０、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar4.jpg " alt="ストラトキャスタータイプ" class="p-secLineup__grid__img">
-                    <p class="p-secLineup__grid__name">StratocasterType</p>
-                    <p class="p-secLineup__grid__price">￥１００、０００（税込）</p>
-                </div>
-            </a> -->
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <div class="p-secLineup__grid__ctn">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar1.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
-                        <ul class="p-secLineup__grid__ul">
-                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
-                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
-                        </ul>
-                    </div>
-                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <div class="p-secLineup__grid__ctn">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar2.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
-                        <ul class="p-secLineup__grid__ul">
-                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
-                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
-                        </ul>
-                    </div>
-                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <div class="p-secLineup__grid__ctn">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar3.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
-                        <ul class="p-secLineup__grid__ul">
-                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
-                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
-                        </ul>
-                    </div>
-                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="p-secLineup__grid__box">
-                    <div class="p-secLineup__grid__ctn">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/guitar4.jpg" alt="レスポールタイプ" class="p-secLineup__grid__img">
-                        <ul class="p-secLineup__grid__ul">
-                            <li class="p-secLineup__grid__cat">Les Paul Type</li>
-                            <li class="p-secLineup__grid__name">MakerX model-1234</li>
-                        </ul>
-                    </div>
-                    <p class="p-secLineup__grid__price">￥１２０、０００（税込）</p>
-                </div>
-            </a>
+            <?php $query = array(
+                'post_type' => 'lineup',
+                'posts_per_page' => 4,
+            ); ?>
+            <?php $lineup_query = new WP_Query($query); ?>
+
+            <?php if ($lineup_query->have_posts()) : ?>
+                <?php while ($lineup_query->have_posts()) : ?>
+                    <?php $lineup_query->the_post(); ?>
+                    <a href="#">
+                        <div id="post-<?php the_ID(); ?>" <?php post_class('p-secLineup__grid__box') ?>>
+                            <div class="p-secLineup__grid__ctn">
+                                <?php
+                                $field_img = get_field('picture1');
+                                if ($field_img) : ?>
+                                    <img src="<?php echo esc_url($field_img['sizes']['item-thumbnail']); ?>" alt="<?php esc_attr(the_field('name')); ?>" class="p-secLineup__grid__img">
+                                <?php endif; ?>
+
+                                <ul class="p-secLineup__grid__ul">
+                                    <li class="p-secLineup__grid__cat"><?php the_field('category'); ?></li>
+                                    <li class="p-secLineup__grid__name"><?php the_field('name'); ?></li>
+                                </ul>
+                            </div>
+                            <p class="p-secLineup__grid__price"><?php the_field('price'); ?></p>
+                        </div>
+                    </a>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
         </div>
 
         <a href="#" class="p-secLineup__btn c-btn">もっと見る</a>
