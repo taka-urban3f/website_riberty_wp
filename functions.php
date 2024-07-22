@@ -40,3 +40,17 @@ function riberty_enqueue_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'riberty_enqueue_scripts');
+
+
+function riberty_widgets_init() {
+    register_sidebar(
+        array(
+            'name' => 'サイドバー',
+            'id' => 'sidebar-widget',
+            'description' => '投稿ページのサイドバー',
+            'before_widget' => '',
+            'after_widget' => '',
+        )
+    );
+}
+add_action('widgets_init', 'riberty_widgets_init');
