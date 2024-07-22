@@ -10,7 +10,7 @@
 
     <title><?php bloginfo('name'); ?> - トップページ - </title>
 
-    <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/favicon.ico">
+    <link rel="icon" href="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/favicon.ico">
 
     <?php wp_head(); ?>
 </head>
@@ -18,13 +18,13 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="l-loading l-loading--nojs">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
+        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
         <p class="l-loading__p">読み込み中・・・</p>
     </div>
 
     <header class="l-header">
         <div class="l-header__bar">
-            <h1 class="l-header__h1"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
+            <h1 class="l-header__h1"><a href="index.html"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
             <div class="l-header__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
@@ -44,8 +44,8 @@
             <div class="l-header__hero__h2 u-textAnime1" data-ta-base-del="0.5" data-ta-each-del="0.06">
                 <div class="l-header__hero__ctn u-swayAnime">
                     <picture>
-                        <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_bura.png">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/sp/text_bura_sp.png" alt="ぶらっ" class="l-header__hero__img">
+                        <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/text_bura.png">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/sp/text_bura_sp.png" alt="ぶらっ" class="l-header__hero__img">
                     </picture>
                 </div>
                 <span class="u-textAnime1__unit">と</span><span class="l-header__hero__span u-textAnime1__unit">立ち寄る</span><span class="u-textAnime1__unit">ギターショップ</span><br><span class="u-textAnime1__unit">「リバティー」へようこそ！</span>

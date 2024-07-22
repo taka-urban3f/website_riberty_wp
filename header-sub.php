@@ -10,7 +10,7 @@
 
     <title><?php bloginfo('name'); ?> - トップページ - </title>
 
-    <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/favicon.ico">
+    <link rel="icon" href="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/favicon.ico">
 
     <?php wp_head(); ?>
 </head>
@@ -18,13 +18,13 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="l-loading l-loading--nojs">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
+        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
         <p class="l-loading__p">読み込み中・・・</p>
     </div>
 
     <header class="l-subPageHeader">
         <div class="l-subPageHeader__bar">
-            <h1 class="l-subPageHeader__h1"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-subPageHeader__h1__img"></a></h1>
+            <h1 class="l-subPageHeader__h1"><a href="index.html"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-subPageHeader__h1__img"></a></h1>
             <div class="l-subPageHeader__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
@@ -42,14 +42,14 @@
         </div>
 
         <?php if (is_home()) {
-            $img_url = esc_url(get_template_directory_uri()) . '/assets/img/hero_news.jpg';
-            $img_sp_url = esc_url(get_template_directory_uri()) . '/assets/img/sp/hero_news_sp.jpg';
+            $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_news.jpg';
+            $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_news_sp.jpg';
         } elseif (is_singular('lineup')) {
-            $img_url = esc_url(get_template_directory_uri()) . '/assets/img/hero_lineup.jpg';
-            $img_sp_url = esc_url(get_template_directory_uri()) . '/assets/img/sp/hero_lineup_sp.jpg';
+            $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_lineup.jpg';
+            $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_lineup_sp.jpg';
         } elseif (is_singular('tsubuyaki')) {
-            $img_url = esc_url(get_template_directory_uri()) . '/assets/img/hero_tsubuyaki.jpg';
-            $img_sp_url = esc_url(get_template_directory_uri()) . '/assets/img/sp/hero_tsubuyaki_sp.jpg';
+            $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_tsubuyaki.jpg';
+            $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_tsubuyaki_sp.jpg';
         } ?>
 
         <picture>
