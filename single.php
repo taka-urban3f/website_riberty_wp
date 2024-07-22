@@ -23,13 +23,6 @@
         </article>
     </main>
     <aside class="l-rowContainer__sideBar p-sideBar">
-        <!-- <h3 class="p-sideBar__h3">アーカイブ</h3>
-        <ol class="p-sideBar__ol">
-            <li class="p-sideBar__li"><a href="#">２０２４年４月</a></li>
-            <li class="p-sideBar__li"><a href="#">２０２４年５月</a></li>
-            <li class="p-sideBar__li"><a href="#">２０２４年６月</a></li>
-            <li class="p-sideBar__li"><a href="#">２０２４年７月</a></li>
-        </ol> -->
         <?php if (is_active_sidebar('sidebar-widget')) : ?>
             <?php dynamic_sidebar('sidebar-widget'); ?>
         <?php endif; ?>

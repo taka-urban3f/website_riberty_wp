@@ -53,11 +53,11 @@
                 'post_type' => 'lineup',
                 'posts_per_page' => 4,
             ); ?>
-            <?php $lineup_query = new WP_Query($query); ?>
+            <?php $lineup_list_query = new WP_Query($query); ?>
 
-            <?php if ($lineup_query->have_posts()) : ?>
-                <?php while ($lineup_query->have_posts()) : ?>
-                    <?php $lineup_query->the_post(); ?>
+            <?php if ($lineup_list_query->have_posts()) : ?>
+                <?php while ($lineup_list_query->have_posts()) : ?>
+                    <?php $lineup_list_query->the_post(); ?>
                     <a href="#">
                         <div id="post-<?php the_ID(); ?>" <?php post_class('p-secLineup__grid__box') ?>>
                             <div class="p-secLineup__grid__ctn">
@@ -94,11 +94,11 @@
                 'post_type' => 'tsubuyaki',
                 'posts_per_page' => 2,
             ); ?>
-            <?php $lineup_query = new WP_Query($query); ?>
+            <?php $blog_list_query = new WP_Query($query); ?>
 
-            <?php if ($lineup_query->have_posts()) : ?>
-                <?php while ($lineup_query->have_posts()) : ?>
-                    <?php $lineup_query->the_post(); ?>
+            <?php if ($blog_list_query->have_posts()) : ?>
+                <?php while ($blog_list_query->have_posts()) : ?>
+                    <?php $blog_list_query->the_post(); ?>
                     <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secBlog__fukidashi') ?>>
                         <dt class="p-secBlog__fukidashi__dt"><time datetime="<?php echo esc_html(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time></dt>
                         <dd class="p-secBlog__fukidashi__dd"><?php the_content(); ?></dd>
