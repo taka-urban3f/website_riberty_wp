@@ -80,7 +80,7 @@
             <?php endif; ?>
         </div>
 
-        <a href="#" class="p-secLineup__btn c-btn">もっと見る</a>
+        <a href="<?php echo esc_url(get_post_type_archive_link('lineup')); ?>" class="p-secLineup__btn c-btn">もっと見る</a>
     </section>
 
     <section class="p-secBlog" id="secBlog">
@@ -107,7 +107,7 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
 
-            <a href="#" class="p-secBlog__btn c-btn">過去のつぶやきを見る</a>
+            <a href="<?php echo esc_url(get_post_type_archive_link('tsubuyaki')); ?>" class="p-secBlog__btn c-btn">過去のつぶやきを見る</a>
         </div>
     </section>
 
@@ -138,6 +138,7 @@
         <?php endif; ?>
 
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('newslist')->ID)); ?>" class="p-secNews__btn c-btn">もっと見る</a>
+        
 
     </section>
 

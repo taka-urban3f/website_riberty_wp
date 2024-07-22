@@ -1,0 +1,111 @@
+//////////////////////////////////////////////////////////////
+/// _p_secBlogList.scss
+//////////////////////////////////////////////////////////////
+
+@use "../../foundation/base";
+
+//////////////////////////////////////////////////////////////
+/// .p-secBlogList
+.p-secBlogList {
+    padding-top: 69px;
+    @include base.common_padding;
+
+    &__box {
+        max-width: base.$maxWidth;
+        margin: 0 auto;
+        padding: 14px 11px 14px;
+        background-color: base.$mainBlue;
+        border-radius: 27px;
+
+        @include base.mq(tab) {
+            padding: 14px 20px 49px;
+        }
+
+        @include base.mq(pc) {
+            padding: 14px 67px 49px 20px;
+        }
+    }
+
+    &__h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 42px;
+
+        @include base.mq(tab) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 26px;
+        }
+
+        &__imgFace {
+            width: 130px;
+        }
+
+        &__imgText {
+            margin-top: -47px;
+            width: 315px;
+
+            @include base.mq(tab) {
+                margin-top: 4px;
+                margin-left: -17px;
+            }
+        }
+    }
+
+    &__fukidashi {
+        position: relative;
+        padding: 18px 27px;
+        margin-right: 0;
+        margin-left: 35px;
+        background-color: white;
+        border-radius: 27px;
+        font-size: base.px_to_rem(18);
+        color: base.$darkBlue;
+
+        &+& {
+            margin-top: 20px;
+        }
+
+        @include base.mq(pc) {
+            display: flex;
+            padding: 44px 57px;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 35px;
+            height: 43px;
+            top: 20px;
+            left: -33px;
+            background-image: url(../img/part_fukidashi.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+        }
+
+        &__dt {
+            margin-bottom: 13px;
+
+            @include base.mq(pc) {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__dd {
+            @include base.mq(tab) {
+                margin-left: 47px;
+            }
+
+            @include base.mq(pc) {
+                margin-left: 56px;
+            }
+        }
+    }
+
+    &__btn {
+        margin: 42px auto 0;
+    }
+}

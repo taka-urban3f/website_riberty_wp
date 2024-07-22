@@ -1,0 +1,38 @@
+//////////////////////////////////////////////////////////////
+/// _l_news_each.scss
+//////////////////////////////////////////////////////////////
+
+@use "../foundation/base";
+
+//////////////////////////////////////////////////////////////
+/// .l-title
+.l-title {
+    padding: 69px 0 56px;
+}
+
+//////////////////////////////////////////////////////////////
+/// .l-rowContainer
+.l-rowContainer {
+    @include base.common_padding;
+
+    @include base.mq(tab) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__main {
+        @include base.mq(tab) {
+            width: 70%;
+        }
+    }
+
+    &__sideBar {
+        margin-top: 30px;
+
+        @include base.mq(tab) {
+            width: 27%;
+            margin-top: 0;
+        }
+    }
+}

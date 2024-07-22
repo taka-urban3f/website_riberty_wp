@@ -3,8 +3,11 @@
 @use "foundation/base";
 @use "layout/layout";
 @use "layout/l_sub_page";
+@use "layout/l_news_each";
 @use "object/component/component";
 @use "object/project/project";
 @use "object/project/p_lineup_list";
 @use "object/project/p_news_list";
+@use "object/project/p_tsubuyaki_list";
+@use "object/project/p_news_each";
 @use "object/utility/utility";
