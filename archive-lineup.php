@@ -16,8 +16,8 @@
             'posts_per_page' => 4,
             'paged' => $paged,
         );
+        $lineup_query = new WP_Query($query);
         ?>
-        <?php $lineup_query = new WP_Query($query); ?>
 
         <?php if ($lineup_query->have_posts()) : ?>
 
@@ -48,7 +48,7 @@
                 <?php
                 echo paginate_links(
                     array(
-                        'total' => $lineup_query->max_num_pages,
+                        'total' => $lineup_query->max_num_pages + 30,
                         'current' => max(1, $paged),
                     )
                 );

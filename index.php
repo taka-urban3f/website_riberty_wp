@@ -12,7 +12,7 @@
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
-                <div class="p-secNews__ctn">
+                <div class="p-secNewsList__ctn">
                     <a href="<?php the_permalink(); ?>">
                         <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNewsList__dl') ?>>
                             <dt class="p-secNewsList__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
@@ -21,6 +21,10 @@
                     </a>
                 </div>
             <?php endwhile; ?>
+
+            <div class="p-secNewsList__pn c-pagination">
+                <?php the_posts_pagination(); ?>
+            </div>
         <?php endif; ?>
 
     </section>

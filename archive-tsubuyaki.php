@@ -8,11 +8,15 @@
                 <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/text_tubuyaki.png" alt="店長のつぶやきブログ" class="p-secBlogList__h2__imgText">
             </h2>
 
-            <?php $query = array(
+            <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $query = array(
                 'post_type' => 'tsubuyaki',
-                'posts_per_page' => 10,
-            ); ?>
-            <?php $lineup_query = new WP_Query($query); ?>
+                'posts_per_page' => 4,
+                'paged' => $paged,
+            );
+            $lineup_query = new WP_Query($query);
+            ?>
 
             <?php if ($lineup_query->have_posts()) : ?>
                 <?php while ($lineup_query->have_posts()) : ?>
@@ -22,6 +26,17 @@
                         <dd class="p-secBlogList__fukidashi__dd"><?php the_content(); ?></dd>
                     </dl>
                 <?php endwhile; ?>
+
+                <div class="p-secBlogList__pn c-pagination">
+                    <?php
+                    echo paginate_links(
+                        array(
+                            'total' => $lineup_query->max_num_pages,
+                            'current' => max(1, $paged),
+                        )
+                    );
+                    ?>
+                </div>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>

@@ -166,20 +166,36 @@
 /// .c-pagination
 .c-pagination {
     width: fit-content;
- 
+
     & .page-numbers {
         display: inline-block;
-        padding: 14px 18px;
-        background-color: base.$lightGray;
+        padding: 7px 8px;
+        background-image: radial-gradient(base.$darkBlue 50%, white);
+        background-size: 200% 200%;
+        background-position: center;
+        background-repeat: no-repeat;
         font-size: base.px_to_rem(18);
-        color: base.$middleGray;
-        border: 1px solid base.$middleGray;
-        border-radius: 5px;
+        color: white;
+        border-radius: 20px;
+        transition: background-size 0.3s ease;
+
+        @media (hover:hover) {
+            &:hover {
+                background-size: 100% 100%;
+            }
+        }
+
+        @include base.mq(tab) {
+            padding: 15px 18px;
+            font-size: base.px_to_rem(20);
+        }
     }
 
     & .current {
-        background-color: base.$mainBlue;
-        color: white;
+        background-image: none;
+        background-color: base.$lightGray;
+        border: 2px solid base.$darkBlue;
+        color: base.$darkBlue;
     }
 
 }
