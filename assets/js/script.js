@@ -104,7 +104,14 @@ let elem_header;
 elem_header = document.querySelector('.l-header');
 if (elem_header) {
     io_h.observe(elem_header);
+} else {
+    elem_header = document.querySelector('.l-subPageHeader');
+    if (elem_header) {
+        io_h.observe(elem_header);
+    }
 }
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 //-----------------テキストアニメーションの為の処理-----------------
