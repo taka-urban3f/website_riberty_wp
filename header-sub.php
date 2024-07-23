@@ -41,21 +41,30 @@
             </ul>
         </div>
 
-        <?php if (is_home()) {
+        <?php
+        $img_url = '';
+        $img_sp_url = '';
+
+        if (is_home() || is_singular('post')) {
+            //ニュース一覧・個別ページの場合のヒーロー画像
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_news.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_news_sp.jpg';
-        } elseif (is_singular('lineup')) {
+        } elseif (is_post_type_archive('lineup')) {
+            //商品の個別ページはヒーロー画像なし。一覧ページには表示。
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_lineup.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_lineup_sp.jpg';
-        } elseif (is_singular('tsubuyaki')) {
+        } elseif (is_post_type_archive('tsubuyaki')) {
+            //つぶやきの個別ページはヒーロー画像なし。一覧ページには表示。
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_tsubuyaki.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_tsubuyaki_sp.jpg';
-        } ?>
-
-        <picture>
-            <source media="(min-width: 768px)" srcset="<?php echo $img_url ?>">
-            <img src="<?php echo $img_sp_url ?>" alt="" class="l-subPageHeader__heroImg">
-        </picture>
+        }
+        ?>
+        <?php if ($img_url && $img_sp_url) : ?>
+            <picture>
+                <source media="(min-width: 768px)" srcset="<?php echo $img_url ?>">
+                <img src="<?php echo $img_sp_url ?>" alt="" class="l-subPageHeader__heroImg">
+            </picture>
+        <?php endif; ?>
 
     </header>
 
