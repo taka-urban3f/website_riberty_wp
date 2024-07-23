@@ -18,7 +18,7 @@
             <?php if ($lineup_query->have_posts()) : ?>
                 <?php while ($lineup_query->have_posts()) : ?>
                     <?php $lineup_query->the_post(); ?>
-                    <a href="#">
+                    <a href="<?php the_permalink(); ?>">
                         <div id="post-<?php the_ID(); ?>" <?php post_class('p-secLineupList__grid__box') ?>>
                             <div class="p-secLineupList__grid__ctn">
                                 <?php
@@ -40,7 +40,7 @@
             <?php endif; ?>
         </div>
 
-        <a href="#" class="p-secLineupList__btn c-btn">もっと見る</a>
+        <?php the_posts_pagination(); ?>
     </section>
 </main>
 
