@@ -130,7 +130,7 @@
             <?php while ($news_list_query->have_posts()) : ?>
                 <?php $news_list_query->the_post(); ?>
                 <div class="p-secNews__ctn">
-                    <a href="<?php the_permalink(); ?>" class="p-secNews__a">
+                    <a href="<?php the_permalink(); ?>">
                         <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNews__dl') ?>>
                             <dt class="p-secNews__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
                             <dd class="p-secNews__dd"><?php the_title(); ?></dd>

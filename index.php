@@ -2,7 +2,7 @@
 
 <main>
     <section class="p-secNewsList">
-        <div class="p-secNewsList__h2 c-hDeco">
+        <div class="c-hDeco">
             <div class="c-hDeco__ctn">
                 <div class="u-skewAnime"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/text_news.svg" alt="ニュース" class="c-hDeco__imgText u-skewAnime__target"></div>
             </div>
@@ -12,12 +12,15 @@
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
-                <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNewsList__dl') ?>>
-                    <dt class="p-secNewsList__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
-                    <dd class="p-secNewsList__dd"><?php the_title(); ?></dd>
-                </dl>
+                <div class="p-secNews__ctn">
+                    <a href="<?php the_permalink(); ?>">
+                        <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNewsList__dl') ?>>
+                            <dt class="p-secNewsList__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
+                            <dd class="p-secNewsList__dd"><?php the_title(); ?></dd>
+                        </dl>
+                    </a>
+                </div>
             <?php endwhile; ?>
-
         <?php endif; ?>
 
     </section>

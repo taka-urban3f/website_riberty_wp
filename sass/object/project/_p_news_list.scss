@@ -10,11 +10,7 @@
     padding-top: 69px;
     @include base.common_padding;
 
-    &__h2 {
-        margin-bottom: 56px;
-    }
-
-    &__dl {
+    &__ctn {
         max-width: base.$maxWidth;
         margin: 0 auto;
         padding: 15px 28px;
@@ -22,17 +18,26 @@
         color: base.$darkBlue;
         border-top: 1px solid base.$mainBlue;
 
+        &:nth-of-type(2) {
+            margin-top: 56px;
+        }
+        
         &:last-of-type {
             border-bottom: 1px solid base.$mainBlue;
         }
 
         @include base.mq(tab) {
-            display: flex;
             padding: 35px 28px;
         }
 
         @include base.mq(pc) {
             padding: 35px 28px 35px 77px;
+        }
+    }
+
+    &__dl {
+        @include base.mq(tab) {
+            display: flex;
         }
     }
 
