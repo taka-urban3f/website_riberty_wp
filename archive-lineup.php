@@ -8,14 +8,20 @@
             </div>
             <h2 class="c-hDeco__p">ラインナップ</h2>
         </div>
-        <div class="p-secLineupList__grid">
-            <?php $query = array(
-                'post_type' => 'lineup',
-                'posts_per_page' => 10,
-            ); ?>
-            <?php $lineup_query = new WP_Query($query); ?>
 
-            <?php if ($lineup_query->have_posts()) : ?>
+        <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $query = array(
+            'post_type' => 'lineup',
+            'posts_per_page' => 4,
+            'paged' => $paged,
+        );
+        ?>
+        <?php $lineup_query = new WP_Query($query); ?>
+
+        <?php if ($lineup_query->have_posts()) : ?>
+
+            <div class="p-secLineupList__grid">
                 <?php while ($lineup_query->have_posts()) : ?>
                     <?php $lineup_query->the_post(); ?>
                     <a href="<?php the_permalink(); ?>">
@@ -36,11 +42,22 @@
                         </div>
                     </a>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
-        </div>
+            </div>
 
-        <?php the_posts_pagination(); ?>
+            <div class="p-secLineupList__pn c-pagination">
+                <?php
+                echo paginate_links(
+                    array(
+                        'total' => $lineup_query->max_num_pages,
+                        'current' => max(1, $paged),
+                    )
+                );
+                ?>
+            </div>
+
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+
     </section>
 </main>
 

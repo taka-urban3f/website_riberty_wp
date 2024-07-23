@@ -161,3 +161,25 @@
         }
     }
 }
+
+//////////////////////////////////////////////////////////////
+/// .c-pagination
+.c-pagination {
+    width: fit-content;
+ 
+    & .page-numbers {
+        display: inline-block;
+        padding: 14px 18px;
+        background-color: base.$lightGray;
+        font-size: base.px_to_rem(18);
+        color: base.$middleGray;
+        border: 1px solid base.$middleGray;
+        border-radius: 5px;
+    }
+
+    & .current {
+        background-color: base.$mainBlue;
+        color: white;
+    }
+
+}
