@@ -266,7 +266,7 @@ const elem_bigimg = document.querySelector('.p-item__bigImg');
 const elem_items = document.querySelectorAll('.p-item__grid__img');
 if (elem_bigimg && elem_items) {
     for (const elem of elem_items) {
-        const str_src = elem.getAttribute('src');
+        const str_src = elem.dataset.bigimgSrc;
 
         elem.addEventListener('click', function () {
             elem_bigimg.setAttribute('src', str_src);

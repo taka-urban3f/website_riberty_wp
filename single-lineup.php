@@ -19,12 +19,11 @@
                         <?php endif; ?>
                     </div>
                     <div class="p-item__grid">
-                        <!-- これからカスタムデータ属性にデカいサイズのURLを設定する。JSも要修正
-                         それとフィールドの値が取得できたかどうかチェックするかどうか -->
                         <?php for ($n = 1; $field_img = get_field('picture' . $n); $n++) : ?>
                             <?php if ($field_img) : ?>
                                 <div class="p-item__grid__cntImg">
-                                    <div class="p-item__grid__cntImgInner"><img src="<?php echo esc_url($field_img['sizes']['item-thumbnail']); ?>" alt="" class="p-item__grid__img"></div>
+                                    <!-- サムネイルには小さい画像を使用。データ属性に大きい画像URLを保持しておいて、JSから利用する。 -->
+                                    <div class="p-item__grid__cntImgInner"><img src="<?php echo esc_url($field_img['sizes']['item-thumbnail']); ?>" alt="" class="p-item__grid__img" data-bigimg-src="<?php echo esc_url($field_img['url']); ?>"></div>
                                 </div>
                             <?php else : ?>
                                 break 1;

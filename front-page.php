@@ -64,7 +64,7 @@
                                 <?php
                                 $field_img = get_field('picture1');
                                 if ($field_img) : ?>
-                                    <img src="<?php echo esc_url($field_img['sizes']['item-thumbnail']); ?>" alt="<?php esc_attr(the_field('name')); ?>" class="p-secLineup__grid__img">
+                                    <img src="<?php echo esc_url($field_img['sizes']['item-image-small']); ?>" alt="<?php esc_attr(the_field('name')); ?>" class="p-secLineup__grid__img">
                                 <?php endif; ?>
 
                                 <ul class="p-secLineup__grid__ul">
