@@ -6,10 +6,10 @@
     </ul>
 
     <ul class="l-footer__ul">
-        <li class="l-footer__li"><a href="index.html#secLineup" class="l-footer__a">ラインナップ</a></li>
-        <li class="l-footer__li"><a href="index.html#secBlog" class="l-footer__a">店長のつぶやき</a></li>
-        <li class="l-footer__li"><a href="index.html#secNews" class="l-footer__a">ニュース</a></li>
-        <li class="l-footer__li"><a href="index.html#secInformation" class="l-footer__a">インフォメーション</a></li>
+        <li class="l-footer__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secLineup" class="l-footer__a">ラインナップ</a></li>
+        <li class="l-footer__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secBlog" class="l-footer__a">店長のつぶやき</a></li>
+        <li class="l-footer__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secNews" class="l-footer__a">ニュース</a></li>
+        <li class="l-footer__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secInformation" class="l-footer__a">インフォメーション</a></li>
     </ul>
 
     <p class="l-footer__p">&copy;2024 Guitar Shop Riberty</p>

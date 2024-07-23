@@ -24,7 +24,7 @@
 
     <header class="l-subPageHeader">
         <div class="l-subPageHeader__bar">
-            <h1 class="l-subPageHeader__h1"><a href="index.html"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-subPageHeader__h1__img"></a></h1>
+            <h1 class="l-subPageHeader__h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-subPageHeader__h1__img"></a></h1>
             <div class="l-subPageHeader__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
@@ -34,10 +34,10 @@
                 <p class="c-humBtn__text">メニュー</p>
             </div>
             <ul class="l-subPageHeader__ul">
-                <li class="l-subPageHeader__ul__li"><a href="index.html#secLineup" class="l-subPageHeader__ul__a">ラインナップ</a></li>
-                <li class="l-subPageHeader__ul__li"><a href="index.html#secBlog" class="l-subPageHeader__ul__a">店長のつぶやき</a></li>
-                <li class="l-subPageHeader__ul__li"><a href="index.html#secNews" class="l-subPageHeader__ul__a">ニュース</a></li>
-                <li class="l-subPageHeader__ul__li"><a href="index.html#secInformation" class="l-subPageHeader__ul__a">インフォメーション</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secLineup" class="l-subPageHeader__ul__a">ラインナップ</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secBlog" class="l-subPageHeader__ul__a">店長のつぶやき</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secNews" class="l-subPageHeader__ul__a">ニュース</a></li>
+                <li class="l-subPageHeader__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secInformation" class="l-subPageHeader__ul__a">インフォメーション</a></li>
             </ul>
         </div>
 
@@ -70,10 +70,10 @@
 
     <div class="l-menu">
         <ul class="l-menu__ul">
-            <li class="l-menu__li"><a href="index.html#secLineup" class="l-menu__a">ラインナップ</a></li>
-            <li class="l-menu__li"><a href="index.html#secBlog" class="l-menu__a">店長のつぶやき</a></li>
-            <li class="l-menu__li"><a href="index.html#secNews" class="l-menu__a">ニュース</a></li>
-            <li class="l-menu__li"><a href="index.html#secInformation" class="l-menu__a">インフォメーション</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secLineup" class="l-menu__a">ラインナップ</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secBlog" class="l-menu__a">店長のつぶやき</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secNews" class="l-menu__a">ニュース</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secInformation" class="l-menu__a">インフォメーション</a></li>
         </ul>
     </div>
 
