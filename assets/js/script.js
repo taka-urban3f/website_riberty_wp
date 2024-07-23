@@ -99,7 +99,7 @@ const io_h = new IntersectionObserver(WhenIntersect_header, {
     threshold: 0
 });
 
-//.l-headerを監視対象に設定
+//.l-headerまたは.l-subPageHeaderを監視対象に設定
 let elem_header;
 elem_header = document.querySelector('.l-header');
 if (elem_header) {
@@ -110,8 +110,6 @@ if (elem_header) {
         io_h.observe(elem_header);
     }
 }
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////
 //-----------------テキストアニメーションの為の処理-----------------

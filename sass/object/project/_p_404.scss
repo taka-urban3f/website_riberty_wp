@@ -1,0 +1,63 @@
+//////////////////////////////////////////////////////////////
+/// _p_404.scss
+//////////////////////////////////////////////////////////////
+
+@use "../../foundation/base";
+
+//////////////////////////////////////////////////////////////
+/// .p-sec404
+.p-sec404 {
+    &__h2 {
+        position: relative;
+        height: 55vw;
+        background-image: url(../img/sp/fukidashi1_sp.svg), linear-gradient(to bottom, base.$mainBlue 0%, white 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%, cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include base.mq(tab) {
+            background-image: url(../img/fukidashi1.svg), linear-gradient(to bottom, base.$mainBlue 0%, white 100%);
+            background-size: 64%, cover;
+        }
+
+        @include base.mq(pc) {
+            background-size: 63.8%, cover;
+        }
+
+        &__p {
+            margin-left: 5%;
+            font-size: 4.2vw;
+            color: base.$darkBlue;
+
+            @include base.mq(tab) {
+                font-size: base.px_to_rem(23);
+            }
+        
+            @include base.mq(pc) {
+                font-size: base.px_to_rem(28.8);
+            }
+        }
+
+        &__imgMan {
+            position: absolute;
+            width: 23vw;
+            top: 84%;
+            left: -3%;
+            transform: rotate(13.46deg);
+
+            @include base.mq(tab) {
+                width: 26vw;
+                top: 52%;
+            }
+
+            @include base.mq(pc) {
+                width: 24.3vw;
+                top: 50%;
+            }
+        }
+    }
+}
