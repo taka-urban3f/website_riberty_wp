@@ -58,7 +58,7 @@
             <?php if ($lineup_list_query->have_posts()) : ?>
                 <?php while ($lineup_list_query->have_posts()) : ?>
                     <?php $lineup_list_query->the_post(); ?>
-                    <a href="#">
+                    <a href="<?php the_permalink(); ?>">
                         <div id="post-<?php the_ID(); ?>" <?php post_class('p-secLineup__grid__box') ?>>
                             <div class="p-secLineup__grid__ctn">
                                 <?php
@@ -129,16 +129,20 @@
         <?php if ($news_list_query->have_posts()) : ?>
             <?php while ($news_list_query->have_posts()) : ?>
                 <?php $news_list_query->the_post(); ?>
-                <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNews__dl') ?>>
-                    <dt class="p-secNews__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
-                    <dd class="p-secNews__dd"><?php the_title(); ?></dd>
-                </dl>
+                <div class="p-secNews__ctn">
+                    <a href="<?php the_permalink(); ?>" class="p-secNews__a">
+                        <dl id="post-<?php the_ID(); ?>" <?php post_class('p-secNews__dl') ?>>
+                            <dt class="p-secNews__dt"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time></dt>
+                            <dd class="p-secNews__dd"><?php the_title(); ?></dd>
+                        </dl>
+                    </a>
+                </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
 
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('newslist')->ID)); ?>" class="p-secNews__btn c-btn">もっと見る</a>
-        
+
 
     </section>
 

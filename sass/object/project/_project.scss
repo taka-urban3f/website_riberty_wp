@@ -575,7 +575,7 @@
     margin-top: 184px;
     @include base.common_padding;
 
-    &__dl {
+    &__ctn {
         max-width: base.$maxWidth;
         margin: 0 auto;
         padding: 15px 28px;
@@ -583,7 +583,7 @@
         color: base.$darkBlue;
         border-top: 1px solid base.$mainBlue;
 
-        &:first-of-type {
+        &:nth-of-type(2) {
             margin-top: 56px;
         }
         
@@ -592,12 +592,17 @@
         }
 
         @include base.mq(tab) {
-            display: flex;
             padding: 35px 28px;
         }
 
         @include base.mq(pc) {
             padding: 35px 28px 35px 77px;
+        }
+    }
+
+    &__dl {
+        @include base.mq(tab) {
+            display: flex;
         }
     }
 
