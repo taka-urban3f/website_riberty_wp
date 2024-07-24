@@ -1,12 +1,15 @@
 'use strict';
 
-//サイトトップURLを保持
-const site_url = 'http://riberty.local/';
+//PHPでサイトトップURLをデータ属性に保持してあるので、それを取得する
+const site_url = document.body.dataset.home;
+
 const ref = document.referrer;
 let flag_same_site = 0;
-//同一サイト内から遷移してきた場合はフラグを立てる。
+//同一サイト内から遷移してきた場合
 if (ref.includes(site_url)) {
+    //フラグを立てる。
     flag_same_site = 1;
+    //ローディング画面はすぐ消す
     document.querySelector('.l-loading').classList.add('l-loading--hide');
 }
 
@@ -18,7 +21,7 @@ const date = new Date();
 const loadingStart = date.getTime();
 
 ///////////////////////////////////////////////////////////////////////////////////
-//-----------------ローディング画面ではスクロール不可にする処理-----------------
+//-----------------スクロール不可にする処理。読み込み完了後にスクロール可能にする-----------------
 function noscroll(e) {
     e.preventDefault();
 }

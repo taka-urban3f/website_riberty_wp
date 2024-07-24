@@ -17,7 +17,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-home="<?php echo esc_url( home_url( '/' ) ); ?>">
     <?php wp_body_open(); ?>
     <div class="l-loading">
         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
