@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="no-js">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,14 @@
 
     <link rel="icon" href="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/favicon.ico">
 
+    <script>document.documentElement.classList.remove('no-js');</script>
+
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div class="l-loading l-loading--nojs">
+    <div class="l-loading">
         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
         <p class="l-loading__p">読み込み中・・・</p>
     </div>

@@ -114,11 +114,11 @@
         transform-origin: -50px bottom;
         transform: translateY(45%) skewY(30deg);
 
-        #{$this}--do & {
+        .no-js & {
             transform: skewY(0);
         }
 
-        #{$this}--nojs & {
+        #{$this}--do & {
             transform: skewY(0);
         }
     }

@@ -1,16 +1,5 @@
 'use strict';
 
-//基本ローディング画面は表示させない設定で、JSが有効な場合は表示させるようにする
-document.querySelector('.l-loading').classList.remove('l-loading--nojs');
-
-//skewAnimeクラスのアニメーションは隠れっぱなし防止の為、基本、直ちに開始するが、JSが有効な場合は画面内に入るまでアニメーションを保留
-let elems_skewAnime = document.querySelectorAll('.u-skewAnime');
-if (elems_skewAnime != null && elems_skewAnime.length >= 1) {
-    for (const elem of elems_skewAnime) {
-        elem.classList.remove('u-skewAnime--nojs');
-    }
-}
-
 //サイトトップURLを保持
 const site_url = 'http://riberty.local/';
 const ref = document.referrer;
