@@ -53,12 +53,12 @@
             //ニュース一覧・個別ページの場合のヒーロー画像
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_news.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_news_sp.jpg';
-        } elseif (is_post_type_archive('lineup')) {
-            //商品の個別ページはヒーロー画像なし。一覧ページには表示。
+        } elseif (is_post_type_archive('lineup') || is_singular('lineup')) {
+            //商品の一覧・個別ページの場合のヒーロー画像。
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_lineup.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_lineup_sp.jpg';
-        } elseif (is_post_type_archive('tsubuyaki')) {
-            //つぶやきの個別ページはヒーロー画像なし。一覧ページには表示。
+        } elseif (is_post_type_archive('tsubuyaki') || is_singular('tsubuyaki')) {
+            //つぶやきの一覧・個別ページの場合のヒーロー画像。
             $img_url = esc_url(get_theme_file_uri()) . '/assets/img/hero_tsubuyaki.jpg';
             $img_sp_url = esc_url(get_theme_file_uri()) . '/assets/img/sp/hero_tsubuyaki_sp.jpg';
         }
@@ -72,8 +72,8 @@
 
     </header>
 
-    <?php if (function_exists('bcn_display')) : ?>
-        <nav class="breadCrumb" typeof="BreadcrumbList" vocab="http://schema.org/" aria-label="現在のページ">
+    <?php if (function_exists('bcn_display') && !is_404()) : ?>
+        <nav class="c-breadCrumb" typeof="BreadcrumbList" vocab="http://schema.org/" aria-label="現在のページ">
             <?php bcn_display(); ?>
         </nav>
     <?php endif; ?>

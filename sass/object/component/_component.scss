@@ -199,3 +199,19 @@
     }
 
 }
+
+//////////////////////////////////////////////////////////////
+/// .c-breadCrumb
+.c-breadCrumb {
+    margin-top: 10px;
+    @include base.common_padding;
+    color: base.$darkBlue;
+
+    >span:not(:last-of-type) {
+        text-decoration: underline;
+    }
+
+    >span:last-of-type {
+        color: base.$mainBlue;
+    }
+}
