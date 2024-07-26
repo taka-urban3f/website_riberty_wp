@@ -416,11 +416,14 @@
     padding-top: 70px;
 
     &__grid {
+        max-width: base.$maxWidth;
         margin-top: 56px;
+        margin-left: auto;
+        margin-right: auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, $img_side_len);
         justify-content: center;
-        gap: 39px;
+        gap: 30px;
 
         &__box {
             height: 100%;
