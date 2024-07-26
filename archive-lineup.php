@@ -13,7 +13,7 @@
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $query = array(
             'post_type' => 'lineup',
-            'posts_per_page' => 4,
+            'posts_per_page' => 12,
             'paged' => $paged,
         );
         $lineup_query = new WP_Query($query);
@@ -35,7 +35,7 @@
 
                                 <ul class="p-secLineupList__grid__ul">
                                     <li class="p-secLineupList__grid__cat"><?php the_field('category'); ?></li>
-                                    <li class="p-secLineupList__grid__name"><?php the_field('name'); ?></li>
+                                    <li class="p-secLineup__grid__name"><?php the_title(); ?></li>
                                 </ul>
                             </div>
                             <p class="p-secLineupList__grid__price"><?php the_field('price'); ?></p>
@@ -48,7 +48,7 @@
                 <?php
                 echo paginate_links(
                     array(
-                        'total' => $lineup_query->max_num_pages + 30,
+                        'total' => $lineup_query->max_num_pages,
                         'current' => max(1, $paged),
                     )
                 );

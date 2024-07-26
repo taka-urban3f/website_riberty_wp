@@ -7,7 +7,7 @@
             <article id="post-<?php the_ID(); ?>" <?php post_class('p-item') ?>>
                 <h2 class="p-item__h2"><?php the_field('category'); ?></h2>
                 <dl class="p-item__dlSummary">
-                    <dt class="p-item__dlSummary__dt"><?php the_field('name'); ?></dt>
+                    <dt class="p-item__dlSummary__dt"><?php the_title(); ?></dt>
                     <dd class="p-item__dlSummary__dd"><?php the_field('price'); ?></dd>
                 </dl>
 

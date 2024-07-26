@@ -69,7 +69,7 @@
 
                                 <ul class="p-secLineup__grid__ul">
                                     <li class="p-secLineup__grid__cat"><?php the_field('category'); ?></li>
-                                    <li class="p-secLineup__grid__name"><?php the_field('name'); ?></li>
+                                    <li class="p-secLineup__grid__name"><?php the_title(); ?></li>
                                 </ul>
                             </div>
                             <p class="p-secLineup__grid__price"><?php the_field('price'); ?></p>
