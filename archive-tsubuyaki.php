@@ -12,7 +12,7 @@
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $query = array(
                 'post_type' => 'tsubuyaki',
-                'posts_per_page' => 12,
+                'posts_per_page' => 8,
                 'paged' => $paged,
             );
             $lineup_query = new WP_Query($query);
