@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="ja" class="no-js">
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
-    <title><?php bloginfo('name'); ?> - トップページ - </title>
-
     <link rel="icon" href="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/favicon.ico">
 
-    <script>document.documentElement.classList.remove('no-js');</script>
+    <script>
+        document.documentElement.classList.remove('no-js');
+    </script>
 
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> data-home="<?php echo esc_url( home_url( '/' ) ); ?>">
+<body <?php body_class(); ?> data-home="<?php echo esc_url(home_url('/')); ?>">
     <?php wp_body_open(); ?>
     <div class="l-loading">
         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo_mini.png" alt="" class="l-loading__img" fetchpriority="high">
@@ -26,7 +26,7 @@
 
     <header class="l-header">
         <div class="l-header__bar">
-            <h1 class="l-header__h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
+            <h1 class="l-header__h1"><a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/logo.png" alt="ギターショップ リバティー" class="l-header__h1__img"></a></h1>
             <div class="l-header__btn c-humBtn">
                 <div class="c-humBtn__box">
                     <span class="c-humBtn__line"></span>
@@ -36,10 +36,10 @@
                 <p class="c-humBtn__text">メニュー</p>
             </div>
             <ul class="l-header__ul">
-                <li class="l-header__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secLineup" class="l-header__ul__a">ラインナップ</a></li>
-                <li class="l-header__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secBlog" class="l-header__ul__a">店長のつぶやき</a></li>
-                <li class="l-header__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secNews" class="l-header__ul__a">ニュース</a></li>
-                <li class="l-header__ul__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secInformation" class="l-header__ul__a">インフォメーション</a></li>
+                <li class="l-header__ul__li"><a href="<?php echo esc_url(home_url('/')); ?>#secLineup" class="l-header__ul__a">ラインナップ</a></li>
+                <li class="l-header__ul__li"><a href="<?php echo esc_url(home_url('/')); ?>#secBlog" class="l-header__ul__a">店長のつぶやき</a></li>
+                <li class="l-header__ul__li"><a href="<?php echo esc_url(home_url('/')); ?>#secNews" class="l-header__ul__a">ニュース</a></li>
+                <li class="l-header__ul__li"><a href="<?php echo esc_url(home_url('/')); ?>#secInformation" class="l-header__ul__a">インフォメーション</a></li>
             </ul>
         </div>
         <div class="l-header__hero">
@@ -58,10 +58,10 @@
 
     <div class="l-menu">
         <ul class="l-menu__ul">
-            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secLineup" class="l-menu__a">ラインナップ</a></li>
-            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secBlog" class="l-menu__a">店長のつぶやき</a></li>
-            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secNews" class="l-menu__a">ニュース</a></li>
-            <li class="l-menu__li"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#secInformation" class="l-menu__a">インフォメーション</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url(home_url('/')); ?>#secLineup" class="l-menu__a">ラインナップ</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url(home_url('/')); ?>#secBlog" class="l-menu__a">店長のつぶやき</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url(home_url('/')); ?>#secNews" class="l-menu__a">ニュース</a></li>
+            <li class="l-menu__li"><a href="<?php echo esc_url(home_url('/')); ?>#secInformation" class="l-menu__a">インフォメーション</a></li>
         </ul>
     </div>
 

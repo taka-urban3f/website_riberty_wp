@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" class="no-js">
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="<?php bloginfo('description'); ?>">
-
-    <title><?php bloginfo('name'); ?> - トップページ - </title>
 
     <link rel="icon" href="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/favicon.ico">
 

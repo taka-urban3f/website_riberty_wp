@@ -1,7 +1,7 @@
 <?php
 function riberty_theme_setup()
 {
-    // add_theme_support('title-tag');
+    add_theme_support('title-tag');
 
     add_image_size('item-thumbnail', 396, 396, false);
     add_image_size('item-image-small', 285, 285, false);
